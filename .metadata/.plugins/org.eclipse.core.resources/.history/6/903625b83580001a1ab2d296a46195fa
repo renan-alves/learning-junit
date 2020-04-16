@@ -1,0 +1,34 @@
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+
+class TesteJulgamentoPrisioneiro {
+
+	//Teste para a Condenação Mutua
+	@Test
+	void calculaPenaCondenacaoMutua() {
+		
+		String respostaPrisioneiroA = "Culpado";
+		String respostaPrisioneiroB = "Culpado";
+		
+		JulgamentoPrisioneiro jp = new JulgamentoPrisioneiro();
+		int penaEsperada = 5;
+		int penaReal = jp.calculaPena(respostaPrisioneiroA, respostaPrisioneiroB);
+	
+		assertEquals(penaEsperada, penaReal);
+	}
+
+	//Teste para a Condenação individual
+	@Test
+	void calculaPenaCondenacaoIndividual() {
+		
+		String respostaPrisioneiroA = "Culpado";
+		String respostaPrisioneiroB = "Inocente";
+		
+		JulgamentoPrisioneiro jp = new JulgamentoPrisioneiro();
+		int penaEsperada = 5;
+		int penaReal = jp.calculaPena(respostaPrisioneiroA, respostaPrisioneiroB);
+	
+		assertEquals(penaEsperada, penaReal);
+	}
+}

@@ -1,0 +1,20 @@
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+
+class TesteJulgamentoPrisioneiro {
+
+	@Test
+	void calculaPenaCondenacaoMutua() {
+		
+		String respostaPrisioneiroA = "Culpado";
+		String respostaPrisioneiroB = "Culpado";
+		
+		JulgamentoPrisioneiro jp = new JulgamentoPrisioneiro();
+		int penaEsperada = 5;
+		int penaReal = jp.calculaPena(respostaPrisioneiroA, respostaPrisioneiroB);
+	
+		assertEquals(penaEsperada, penaReal);
+	}
+
+}
